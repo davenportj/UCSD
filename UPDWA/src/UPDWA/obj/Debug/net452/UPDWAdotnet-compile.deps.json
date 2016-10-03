@@ -1,7 +1,7 @@
 {
   "runtimeTarget": {
     "name": ".NETFramework,Version=v4.5.2/",
-    "signature": "0e282f7250691dbce404adb6f85bd8cc47a0a76c"
+    "signature": "108cc4dd68b2167dfb1035349dc3a81cc1cc8124"
   },
   "compilationOptions": {
     "defines": [
@@ -17,6 +17,7 @@
     ".NETFramework,Version=v4.5.2": {
       "UPDWA/1.0.0": {
         "dependencies": {
+          "EntityFramework": "6.1.3",
           "Microsoft.AspNetCore.Authentication.Cookies": "1.0.0",
           "Microsoft.AspNetCore.Diagnostics": "1.0.0",
           "Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore": "1.0.0",
@@ -37,6 +38,15 @@
         },
         "compile": {
           "UPDWA.exe": {}
+        }
+      },
+      "EntityFramework/6.1.3": {
+        "dependencies": {
+          "System.ComponentModel.DataAnnotations": "4.0.0.0"
+        },
+        "compile": {
+          "lib/net45/EntityFramework.SqlServer.dll": {},
+          "lib/net45/EntityFramework.dll": {}
         }
       },
       "Libuv/1.9.0": {
@@ -1146,6 +1156,11 @@
           ".NETFramework/v4.5.2/System.Core.dll": {}
         }
       },
+      "System.ComponentModel.DataAnnotations/4.0.0.0": {
+        "compile": {
+          ".NETFramework/v4.5.2/System.ComponentModel.DataAnnotations.dll": {}
+        }
+      },
       "System.Net.Http/4.0.0.0": {
         "compile": {
           ".NETFramework/v4.5.2/System.Net.Http.dll": {}
@@ -1169,11 +1184,6 @@
       "System.Configuration/4.0.0.0": {
         "compile": {
           ".NETFramework/v4.5.2/System.Configuration.dll": {}
-        }
-      },
-      "System.ComponentModel.DataAnnotations/4.0.0.0": {
-        "compile": {
-          ".NETFramework/v4.5.2/System.ComponentModel.DataAnnotations.dll": {}
         }
       },
       "System.Diagnostics.Tools/4.0.0.0": {
@@ -1225,6 +1235,7 @@
     ".NETFramework,Version=v4.5.2/": {
       "UPDWA/1.0.0": {
         "dependencies": {
+          "EntityFramework": "6.1.3",
           "Microsoft.AspNetCore.Authentication.Cookies": "1.0.0",
           "Microsoft.AspNetCore.Diagnostics": "1.0.0",
           "Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore": "1.0.0",
@@ -1245,6 +1256,15 @@
         },
         "runtime": {
           "UPDWA.exe": {}
+        }
+      },
+      "EntityFramework/6.1.3": {
+        "dependencies": {
+          "System.ComponentModel.DataAnnotations": "4.0.0.0"
+        },
+        "runtime": {
+          "lib/net45/EntityFramework.SqlServer.dll": {},
+          "lib/net45/EntityFramework.dll": {}
         }
       },
       "Libuv/1.9.0": {
@@ -2250,12 +2270,12 @@
       "mscorlib/4.0.0.0": {},
       "System/4.0.0.0": {},
       "System.Core/4.0.0.0": {},
+      "System.ComponentModel.DataAnnotations/4.0.0.0": {},
       "System.Net.Http/4.0.0.0": {},
       "System.Security/4.0.0.0": {},
       "System.Xml/4.0.0.0": {},
       "System.Xml.Linq/4.0.0.0": {},
       "System.Configuration/4.0.0.0": {},
-      "System.ComponentModel.DataAnnotations/4.0.0.0": {},
       "System.Diagnostics.Tools/4.0.0.0": {},
       "System.Data/4.0.0.0": {},
       "System.Transactions/4.0.0.0": {},
@@ -2272,6 +2292,11 @@
       "type": "project",
       "serviceable": false,
       "sha512": ""
+    },
+    "EntityFramework/6.1.3": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-2xzFHAF3VVdmTR3//MygtQpwfbDjeaq+nQwCcokLzen7MKHOojPaxNPQPa4diHY1QtcR7zlHAJHNRqPB7W2Syw=="
     },
     "Libuv/1.9.0": {
       "type": "package",
@@ -2893,6 +2918,11 @@
       "serviceable": false,
       "sha512": ""
     },
+    "System.ComponentModel.DataAnnotations/4.0.0.0": {
+      "type": "referenceassembly",
+      "serviceable": false,
+      "sha512": ""
+    },
     "System.Net.Http/4.0.0.0": {
       "type": "referenceassembly",
       "serviceable": false,
@@ -2914,11 +2944,6 @@
       "sha512": ""
     },
     "System.Configuration/4.0.0.0": {
-      "type": "referenceassembly",
-      "serviceable": false,
-      "sha512": ""
-    },
-    "System.ComponentModel.DataAnnotations/4.0.0.0": {
       "type": "referenceassembly",
       "serviceable": false,
       "sha512": ""
