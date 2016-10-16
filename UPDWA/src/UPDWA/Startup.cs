@@ -43,6 +43,9 @@ namespace UPDWA
             services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
 
+            services.AddDbContext<AlertContext>(options =>
+                options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")))
+
             services.AddIdentity<ApplicationUser, IdentityRole>()
                 .AddEntityFrameworkStores<ApplicationDbContext>()
                 .AddDefaultTokenProviders();
