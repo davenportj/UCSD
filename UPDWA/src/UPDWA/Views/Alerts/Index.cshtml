@@ -1,0 +1,63 @@
+@model IEnumerable<UPDWA.Models.Alert>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Alerts</h2>
+<div class="NewAlert">
+    <h2>Create a New Alert</h2>
+    <form asp-action="Create" name="CreateAlert">
+        <textarea id="AlertContent" name="AlertContent"></textarea><br />
+        <button type="submit">Create Alert</button>
+    </form>
+</div>
+<div class="AlertContent">
+    @foreach (var item in Model)
+    {
+        <div class="SingleAlert">
+            <div class="col-md-12 AlertText">
+                @item.Message
+            </div>
+
+            <div class="col-md-6">
+                Posted: @item.FirstPosted
+            </div>
+            @if (@item.FirstPosted != @item.LastUpdated)
+            {
+                <div class="col-md-6">
+                    Last Updated: @item.LastUpdated
+                </div>
+            }
+
+
+        </div>
+        @*<table class="AlertTable">
+            <tr>
+                <td><h3>@item.Message</h3></td>
+            </tr>
+            <tr>
+                <td>Posted: @item.FirstPosted</td>
+                <td></td>
+                <td>Updated: @item.LastUpdated</td>
+            </tr>
+
+        </table>*@
+
+            @*<tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.FirstPosted)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.LastUpdated)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Message)
+                    </td>
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                        <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                        <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                    </td>
+                </tr>*@
+    }

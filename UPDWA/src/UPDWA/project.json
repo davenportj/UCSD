@@ -39,7 +39,8 @@
     "Microsoft.VisualStudio.Web.CodeGenerators.Mvc": {
       "version": "1.0.0-preview2-final",
       "type": "build"
-    }
+    },
+    "MySql.Data.EntityFrameworkCore": "7.0.5-IR21"
   },
 
   "tools": {

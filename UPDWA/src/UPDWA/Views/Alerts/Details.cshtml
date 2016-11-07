@@ -1,0 +1,36 @@
+@model UPDWA.Models.Alert
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Alert</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.FirstPosted)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.FirstPosted)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.LastUpdated)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.LastUpdated)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Message)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Message)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.Id">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>
