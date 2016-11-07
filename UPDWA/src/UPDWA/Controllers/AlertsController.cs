@@ -53,15 +53,21 @@ namespace UPDWA.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,FirstPosted,LastUpdated,Message")] Alert alert)
+        public async Task<IActionResult> Create(string AlertContent)
         {
+            var Alert = new Alert
+            {
+                Message = AlertContent,
+                FirstPosted = DateTime.Now,
+                LastUpdated = DateTime.Now
+            };
             if (ModelState.IsValid)
             {
-                _context.Add(alert);
+                _context.Add(Alert);
                 await _context.SaveChangesAsync();
                 return RedirectToAction("Index");
             }
-            return View(alert);
+            return View(Alert);
         }
 
         // GET: Alerts/Edit/5
