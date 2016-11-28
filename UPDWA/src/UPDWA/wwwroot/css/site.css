@@ -48,3 +48,18 @@ textarea {
     display: none
   }
 }
+
+.jumbotron {
+    width: 100%;
+    color: white;
+    margin-top: 0px;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+    background: url(images/banner.jpg);
+    background-size: 100%;
+}
+
+.navbar{
+    background-color: white;
+    background-image: none;
+    padding-bottom: 0px;
+}

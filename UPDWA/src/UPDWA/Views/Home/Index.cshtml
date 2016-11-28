@@ -1,11 +1,58 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
-    <div class="jumbotron jumbotron-fluid">
-        <div class="container">
-            <h1 class="display-3">Unicoi County Police Department</h1>
+    @section BeforeContainer{
+        <div class="jumbotron jumbotron-fluid page-header">
+            <div class="container">
+                <h1>Unicoi County Police Department</h1>
+                <span>Unicoi, TN</span>
+        </div>
+</div>
+    }
+    <div class="row">
+        <div class="col-md-4">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4><i class="fa fa-fw fa-check"></i> TN Highway Patrol Twitter</h4>
+                </div>
+                <div class="panel-body">
+                    <a class="twitter-timeline" data-height="500" data-dnt="true" data-theme="light" href="https://twitter.com/TNHighwayPatrol?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor">Tweets by Tennessee Highway Patrol</a>
+                    <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4><i class="fa fa-fw fa-gift"></i> Recent Alerts</h4>
+                </div>
+                <div class="panel-body">
+                    @foreach(var Alert in ViewBag.RecentAlerts)
+                    {
+                        <div class="alert panel panel-default">
+                            <div class="panel-body">
+                                <i class="fa fa-clock-o" style="font-size: 0.9em;">Posted at @Alert.FirstPosted</i>
+                                <p> <br />@Alert.Message</p>
+                            </div>
+                        </div>
+                    }
+                    <a asp-controller="Alerts" asp-action="Index" class="btn btn-default">View All</a>
+
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4><i class="fa fa-fw fa-compass"></i> Submit a Tip</h4>
+                </div>
+                <div class="panel-body">
+                    <p>Submit an anonymous tip about a crime.</p>
+                    <input type="text" placeholder="Tip..." /><br /><br />
+                    <a href="#" class="btn btn-default">Submit</a>
+                </div>
+            </div>
         </div>
     </div>
-}<div class="col-md-4" style="height: 30px;">
-     <a class="twitter-timeline" data-height="500" data-dnt="true" data-theme="dark" href="https://twitter.com/TNHighwayPatrol?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor">Tweets by Tennessee Highway Patrol</a>
-     <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script> </div>
+        <!-- /.row -->
+}
 
